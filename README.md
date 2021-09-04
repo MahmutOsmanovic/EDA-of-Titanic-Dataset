@@ -1,25 +1,25 @@
 ### Exploraty Data Analysis of the famous titanic dataset.
 
 ## General Competition Description
->The goal in this competition is to take an image of a handwritten single digit, and determine what >that digit is.
+>The goal in this competition is to take an image of a handwritten single digit, and determine what that digit is.
 >
->The data for this competition were taken from the MNIST dataset. The MNIST ("Modified National >Institute of Standards and Technology") dataset is a classic within the Machine Learning community >that has been extensively studied. 
+>The data for this competition were taken from the MNIST dataset. The MNIST ("Modified National Institute of Standards and Technology") dataset is a classic within the Machine Learning community >that has been extensively studied. 
 
 ## Contents
+- **[Part 1: EDA](#part-1:-eda)** 
+1. Feature analysis
+2. Scanning for general relationships and trends on multiple features
+
+- **[Part 2: Cleaning the Data && Feature Engineering](#part-2:-cleaning-the-data-&&-feature-engineering)**
+1. Adding new features
+2. Removing redundant features
+3. Converting features into suitable form for modeling.
+
+- **[# Part 3: Predictive Modeling using KNN](#part-3:-predictive-modeling-using-knn)** 
+1. Building a predictive model using KNN
+2. Cross Validation
+
 # Part 1: EDA
-- 1. Feature analysis
-- 2. Scanning for general relationships and trends on multiple features
-
-# Part 2: Cleaning the Data && Feature Engineering
-- 1. Adding new features
-- 2. Removing redundant features
-- 3. Converting features into suitable form for modeling.
-
-# Part 3: Predictive Modeling
-- 1. Running Basic Algorithms
-- 2. Cross Validation
-- 3. Ensembling (combine simpler models to create a new single more powerful one)
-- 4. Important Features Extraction
 
 **How many Survived?**
 
@@ -62,11 +62,11 @@ Looks like Pclass is also an important feature. Lets analyse other features.
 <img src="images/Figure%202021-09-04%20111407%20(4).png" width="1024">
 
 **Observations:**
-- 1) The number of children increases with Pclass and the survival rate for passenegers below Age 10(i.e children) looks to be good irrespective of the Pclass.
+1) The number of children increases with Pclass and the survival rate for passenegers below Age 10(i.e children) looks to be good irrespective of the Pclass.
 
-- 2) Survival chances for Passenegers aged 20-50 from Pclass1 is high and is even better for Women.
+2) Survival chances for Passenegers aged 20-50 from Pclass1 is high and is even better for Women.
 
-- 3) For males, the survival chances decreases with an increase in age.
+3) For males, the survival chances decreases with an increase in age.
 
 As we had seen earlier, the Age feature has *177 null values*. To replace these NaN values, we can assign them the mean age of the dataset.
 
@@ -77,11 +77,11 @@ Bingo!!!!, we can check the Name feature. Looking upon the feature, we can see t
 <img src="images/Figure%202021-09-04%20111407%20(5).png" width="1024">
 
 **Observations:**
-- 1) The Toddlers(age<5) were saved in large numbers(The Women and Child First Policy).
+1) The Toddlers(age<5) were saved in large numbers(The Women and Child First Policy).
 
-- 2) The oldest Passenger was saved(80 years).
+2) The oldest Passenger was saved(80 years).
 
-- 3) Maximum number of deaths were in the age group of 30-40.
+3) Maximum number of deaths were in the age group of 30-40.
 
 <img src="images/Figure%202021-09-04%20111407%20(6).png" width="1024">
 
@@ -94,38 +94,26 @@ The chances for survival for Port C is highest around 0.55 while it is lowest fo
 <img src="images/Figure%202021-09-04%20111407%20(8).png" width="1024">
 
 **Observations:**
-- 1) Maximum passenegers boarded from S. Majority of them being from Pclass3.
+1) Maximum passenegers boarded from S. Majority of them being from Pclass3.
 
-- 2) The Passengers from C look to be lucky as a good proportion of them survived. The reason for this maybe the rescue of all the Pclass1 and Pclass2 Passengers.
+2) The Passengers from C look to be lucky as a good proportion of them survived. The reason for this maybe the rescue of all the Pclass1 and Pclass2 Passengers.
 
-- 3) The Embark S looks to the port from where majority of the rich people boarded. Still the chances for survival is low here, that is because many passengers from Pclass3 around 81% didn't survive.
+3) The Embark S looks to the port from where majority of the rich people boarded. Still the chances for survival is low here, that is because many passengers from Pclass3 around 81% didn't survive.
 
-- 4) Port Q had almost 95% of the passengers were from Pclass3.
+4) Port Q had almost 95% of the passengers were from Pclass3.
 
 <img src="images/Figure%202021-09-04%20111407%20(9).png" width="768">
 
 **Observations:**
-- 1) The survival chances are almost 1 for women for Pclass1 and Pclass2 irrespective of the Pclass.
+1) The survival chances are almost 1 for women for Pclass1 and Pclass2 irrespective of the Pclass.
 
-- 2) Port S looks to be very unlucky for Pclass3 Passenegers as the survival rate for both men and women is very low.(Money Matters)
+2) Port S looks to be very unlucky for Pclass3 Passenegers as the survival rate for both men and women is very low.(Money Matters)
 
-- 3) Port Q looks looks to be unlukiest for Men, as almost all were from Pclass 3.
-
-<img src="images/Figure%202021-09-04%20111407%20(10).png" width="1024">
-
-**Observations:**
-The barplot and factorplot shows that if a passenger is alone onboard with no siblings, he have 34.5% survival rate. The graph roughly decreases if the number of siblings increase. This makes sense. That is, if I have a family on board, I will try to save them instead of saving myself first. Surprisingly the survival for families with 5-8 members is *0%*. The reason may be Pclass??
-
-The reason is Pclass. The crosstab shows that Person with SibSp>3 were all in Pclass3. It is imminent that all the large families in Pclass3(>3) died.
+3) Port Q looks looks to be unlukiest for Men, as almost all were from Pclass 3.
 
 <img src="images/Figure%202021-09-04%20111407%20(11).png" width="1024">
 
-**Observations:**
-Here too the results are quite similar. Passengers with their parents onboard have greater chance of survival. It however reduces as the number goes up.
-
-The chances of survival is good for somebody who has 1-3 parents on the ship. Being alone also proves to be fatal and the chances for survival decreases when somebody has >4 parents on the ship.
-
-<img src="images/Figure%202021-09-04%20111407%20(12).png" width="1024">
+There looks to be a large distribution in the fares of Passengers in Pclass1 and this distribution goes on decreasing as the standards reduces. As this is also continous, we can convert into discrete values by using binning.
 
 # Observations in a Nutshell for all features:
 **Sex:** The chance of survival for women is high as compared to men.
@@ -140,7 +128,7 @@ The chances of survival is good for somebody who has 1-3 parents on the ship. Be
 
 # Correlation Between The Features
 
-<img src="images/Figure%202021-09-04%20111407%20(13).png" width="1024">
+<img src="images/Figure%202021-09-04%20111407%20(12).png" width="1024">
 
 **Interpreting The Heatmap**
 The first thing to note is that only the numeric features are compared as it is obvious that we cannot correlate between alphabets or strings. Before understanding the plot, let us see what exactly correlation is.
@@ -157,16 +145,27 @@ Now from the above heatmap,we can see that the features are not much correlated.
 
 # Part 2: Cleaning the Data && Feature Engineering
 
-<img src="images/Figure%202021-09-04%20111407%20(14).png" width="1024">
+<img src="images/Figure%202021-09-04%20111407%20(13).png" width="1024">
 
 True that..the survival rate decreases as the age increases irrespective of the Pclass.
 
-It is visible that being alone is harmful irrespective of Sex or Pclass except for Pclass3 where the chances of females who are alone is high than those with family.
+<img src="images/Figure%202021-09-04%20111407%20(15).png" width="1024">
+
+Clearly, as the Fare_cat increases, the survival chances increases. This feature may become an important feature during modeling along with the Sex.
 
 <img src="images/Figure%202021-09-04%20111407%20(16).png" width="1024">
 
 Now the above correlation plot, we can see some positively related features. Some of them being SibSp andd Family_Size and Parch and Family_Size and some negative ones like Alone and Family_Size.
 
-# Part 3: Predictive Modeling
+# Part 3: Predictive Modeling using KNN
+
+Now the accuracy for the KNN model changes as we change the values for n_neighbours attribute. The default value is 5. Lets check the accuracies over various values of n_neighbours.
 
 <img src="images/Figure%202021-09-04%20111407%20(17).png" width="1024">
+
+```
+Accuracies for different values of n are: [ 0.75746269  0.79104478  0.80970149  0.80223881  0.83208955  0.81716418
+  0.82835821  0.83208955  0.8358209   0.83208955] with the max value as  0.835820895522
+```
+
+**BEST RESULT:** 0.835

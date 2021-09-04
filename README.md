@@ -15,7 +15,7 @@
 2. Removing redundant features
 3. Converting features into suitable form for modeling.
 
-- **[Part 3: Predictive Modeling using KNN](#part-3:-predictive-modeling-using-knn)
+- **[Part 3: Predictive Modeling using KNN](#part-3:-predictive-modeling-using-knn)**
 1. Building a predictive model using KNN
 2. Cross Validation
 

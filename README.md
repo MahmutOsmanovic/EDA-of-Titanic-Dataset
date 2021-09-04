@@ -1,3 +1,5 @@
 Exploraty Data Analysis of the famous titanic dataset.
 
-![](images/Figure 2021-09-04 111407 (0).png)
+![](images/Figure%202021-09-04%20111407%20(0).png)
+
+<img src="images/Figure%202021-09-04%20111407%20(0).png" width="48">

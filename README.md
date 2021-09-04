@@ -15,11 +15,11 @@
 2. Removing redundant features
 3. Converting features into suitable form for modeling.
 
-- **[# Part 3: Predictive Modeling using KNN](#part-3:-predictive-modeling-using-knn)** 
+- **[Part 3: Predictive Modeling using KNN](#part-3:-predictive-modeling-using-knn)
 1. Building a predictive model using KNN
 2. Cross Validation
 
-# Part 1: EDA
+## Part 1: EDA
 
 **How many Survived?**
 
@@ -49,7 +49,7 @@ For Pclass 1 %survived is around 63% while for Pclass2 is around 48%. So money a
 
 Lets Dive in little bit more and check for other interesting observations. Lets check survival rate with Sex and Pclass Together.
 
-<img src="images/Figure%202021-09-04%20111407%20(3).png" width="1024">
+<img src="images/Figure%202021-09-04%20111407%20(3).png" width="512">
 
 I use FactorPlot in this case, because they make the seperation of categorical values easy.
 
@@ -143,13 +143,13 @@ So do you think we should use both of them as one of them is redundant. While ma
 
 Now from the above heatmap,we can see that the features are not much correlated. The highest correlation is between SibSp and Parch i.e 0.41. So we can carry on with all features.
 
-# Part 2: Cleaning the Data && Feature Engineering
+## Part 2: Cleaning the Data && Feature Engineering
 
 <img src="images/Figure%202021-09-04%20111407%20(13).png" width="1024">
 
 True that..the survival rate decreases as the age increases irrespective of the Pclass.
 
-<img src="images/Figure%202021-09-04%20111407%20(15).png" width="1024">
+<img src="images/Figure%202021-09-04%20111407%20(15).png" width="512">
 
 Clearly, as the Fare_cat increases, the survival chances increases. This feature may become an important feature during modeling along with the Sex.
 
@@ -157,7 +157,7 @@ Clearly, as the Fare_cat increases, the survival chances increases. This feature
 
 Now the above correlation plot, we can see some positively related features. Some of them being SibSp andd Family_Size and Parch and Family_Size and some negative ones like Alone and Family_Size.
 
-# Part 3: Predictive Modeling using KNN
+## Part 3: Predictive Modeling using KNN
 
 Now the accuracy for the KNN model changes as we change the values for n_neighbours attribute. The default value is 5. Lets check the accuracies over various values of n_neighbours.
 
